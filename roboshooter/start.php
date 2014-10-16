@@ -19,8 +19,8 @@ echo $content;
 <meta charset="UTF-8">
 <title>ROBOSHOOTER</title>
 <!-- Bootstrap core CSS -->
-    <link href="../assets/css/bootstrap.css" rel="stylesheet">
-        <link href="../assets/css/font-awesome.min.css" rel="stylesheet">
+  <link href="http://nujules.nl/assets/css/bootstrap.css" rel="stylesheet">
+  <link href="http://nujules.nl/assets/css/font-awesome.min.css" rel="stylesheet">
 
 </head>
 <body>
