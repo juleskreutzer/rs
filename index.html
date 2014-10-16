@@ -1,225 +1,365 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>ROBOSHOOTER</title>
-<!-- Bootstrap core CSS -->
-    <link href="../assets/css/bootstrap.css" rel="stylesheet">
-        <link href="../assets/css/font-awesome.min.css" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
 
+    <title>NU! JULES - WEBDEVELOPMENT</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/js/fancybox/jquery.fancybox.css" rel="stylesheet" />
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54813389-1', 'auto');
+  ga('require', 'displayfeatures');
+  ga('send', 'pageview');
+
+  </script>
 </head>
 
-<body>
-<div id="fb-root"></div>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
-<script>
-setTimeout(function() {
-	window.location = "index.html";
-}, 6000);
-</script>
-<script>
-  // This is called with the results from from FB.getLoginStatus().
-  function statusChangeCallback(response) {
-    console.log('statusChangeCallback');
-    console.log(response);
-    // The response object is returned with a status field that lets the
-    // app know the current login status of the person.
-    // Full docs on the response object can be found in the documentation
-    // for FB.getLoginStatus().
-    if (response.status === 'connected') {
-      // Logged into your app and Facebook.
-      testAPI();
-      // relocate to 'game.php'
-      setTimeout(function() {
-        window.location = "start.php";
-      }, 5000);
-    } else if (response.status === 'not_authorized') {
-      // The person is logged into Facebook, but not your app.
-      document.getElementById('status').innerHTML = 'Please log ' +
-        'into this app.';
-    } else {
-      // The person is not logged into Facebook, so we're not sure if
-      // they are logged into this app or not.
-      document.getElementById('status').innerHTML = 'Please log ' +
-        'into Facebook.';
-    }
-  }
+  <body data-spy="scroll" data-offset="0" data-target="#theMenu">
+		
+	<!-- Menu -->
+	<nav class="menu" id="theMenu">
+		<div class="menu-wrap">
+			<h1 class="logo"><a href="index.html#home">Nu! Jules</a></h1>
+			<i class="fa fa-times menu-close"></i>
+			<a href="#home" class="smoothScroll">Home</a>
+			<a href="#about" class="smoothScroll">Over Mij</a>
+			<a href="#portfolio" class="smoothScroll">Enkele voorbeelden</a>
+			<a href="#services" class="smoothScroll">NU! CMS</a>
+			<a href="#contact" class="smoothScroll">Contact</a>
+			<a href="http://www.facebook.com/jules.kreutzer" target="_blank"><i class="fa fa-facebook"></i></a>
+			<a href="http://www.twitter.com/jules_kreutzer" target="_blank"><i class="fa fa-twitter"></i></a>
+			<a href="mailto:jules@nujules.nl?subject=Email%20verzonden%20vanuit%20website"><i class="fa fa-envelope"></i></a>
+		</div>
+		
+		<!-- Menu button -->
+		<div id="menuToggle"><i class="fa fa-bars"></i></div>
+	</nav>
 
-  // This function is called when someone finishes with the Login
-  // Button.  See the onlogin handler attached to it in the sample
-  // code below.
-  function checkLoginState() {
-    FB.getLoginStatus(function(response) {
-      statusChangeCallback(response);
-    });
-  }
+	<section id="home" name="home"></section>
+	<div id="headerwrap">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3">
+					<h1 style="color:orange" class="proc"><img src="assets/img/logo/NU! JULES - Website.png" class="img-responsive" /></h1>
+				</div>
+			</div><! --/row -->
+		</div><! --/container -->
+	</div><! --/headerwrap -->
+	
+	<section id="about" name="about"></section>
+	<div id="aboutwrap">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4 name">
+					<img class="img-rounded img-responsive" src="assets/img/profile.jpg" height="75%" width="100%">
+					<p><a href="mailto:jules@nujules.nl?subject=Email%20vanuit%20website"><i class="fa fa-envelope"> &nbsp;Jules Kreutzer</i></a></p>
+					<div class="name-label"></div>
+				</div><! --/col-lg-4-->
+				<div class="col-lg-8 name-desc">
+					<h2>Webdeveloper &amp; CMS ontwikkeling</h2>
+					<div class="name-zig"></div>
+					
+					<div class="col-md-8">
+						<p>Sinds 2009 ben ik bezig met het ontwikkelen van websites voor kleine bedrijven in midden limburg. Door mijn intresse ben ik zeer gedreven in het ontwikkelen van moderne websites, zowel meerdere pagina's als de zogenoemde 'landing page' websites. Perfectionisme en functionaliteit speelt een grote rol voor mij bij de ontwikkeling van websites. </p>
+						<p>Bij ontwikkeling van een nieuwe website maak ik het liefst gebruik van de nieuwste technologiën om uw website altijd goed te laten fucntioneren op  computer, maar ook op een mobiel apparaat zoals een smartphone of tablet. Enkele van deze technologiën zijn HTML 5 en CSS 3. Tevens gebruik ik ook Bootstrap 3 als basis opmaak van de website. Dit zorgt voor een nog betere werking op mobiele apparaten.</p>
+					
+                    <h3>Nu! CMS</h3>
+						<p>Nu! CMS (Content Management System) is een eigen ontwikkeld systeem om uw website te kunnen beheren. Dit CMS kunt u gratis gebruiken bij uw website die door NuJules is ontwikkeld. De verwachting is dat NU! CMS in 2014 kan worden gaan gebruikt. Verdere informatie over het NU! CMS kunt u vinden op <a href="/cms"><i class="fa fa-link">&nbsp;deze</i></a> pagina.</p>
+					</div>
+					
+				</div><! --/col-lg-8-->
+		
+			</div><!-- /row -->
+		</div><!-- /container -->
+	</div><!-- /aboutwrap -->
+	
+	<! -- ABOUT SEPARATOR -->
+	<div class="sep about" data-stellar-background-ratio="0.5"></div>
+	
+	<! -- PORTFOLIO SECTION -->
+	<section id="portfolio" name="portfolio"></section>
+	<div id="portfoliowrap">
+		<div class="container">
+			<div class="row">
+				<h1>Enkele voorbeelden...</h1>
+                <div class="col-lg-8-offet-2 centered">
+<span class="alert alert-info"><a href="/oim" class="alert-link">Bekijk mijn laatste project: ICT & Media Design</a></span>	
+				</div>
+      			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
+					<div class="project-wrapper">
+	                    <div class="project">
+	                        <div class="photo-wrapper">
+	                            <div class="photo">
+	                            	<a class="fancybox" href="assets/img/portfolio/1.png"><img class="img-responsive" src="assets/img/portfolio/1.png" height="400" alt=""></a>
+	                            </div>
+	                            <div class="overlay"></div>
+	                        </div>
+	                    </div>
+	                </div>
+				</div><!-- col-lg-4 -->
+				
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
+					<div class="project-wrapper">
+	                    <div class="project">
+	                        <div class="photo-wrapper">
+	                            <div class="photo">
+	                            	<a class="fancybox" href="assets/img/portfolio/2.png"><img class="img-responsive" src="assets/img/portfolio/2.png" height="400" alt=""></a>
+	                            </div>
+	                            <div class="overlay"></div>
+	                        </div>
+	                    </div>
+	                </div>
+				</div><!-- col-lg-4 -->
+				
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
+					<div class="project-wrapper">
+	                    <div class="project">
+	                        <div class="photo-wrapper">
+	                            <div class="photo">
+	                            	<a class="fancybox" href="assets/img/portfolio/3.png"><img class="img-responsive" src="assets/img/portfolio/3.png"  alt=""></a>
+	                            </div>
+	                            <div class="overlay"></div>
+	                        </div>
+	                    </div>
+	                </div>
+				</div><!-- col-lg-4 -->
+			</div><!-- /row -->
+	
+			<div class="row mt">
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
+					<div class="project-wrapper">
+	                    <div class="project">
+	                        <div class="photo-wrapper">
+	                            <div class="photo">
+	                            	<a class="fancybox" href="assets/img/portfolio/4.png"><img class="img-responsive" src="assets/img/portfolio/4.png" alt=""></a>
+	                            </div>
+	                            <div class="overlay"></div>
+	                        </div>
+	                    </div>
+	                </div>
+				</div><!-- col-lg-4 -->
+				
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
+					<div class="project-wrapper">
+	                    <div class="project">
+	                        <div class="photo-wrapper">
+	                            <div class="photo">
+	                            	<a class="fancybox" href="assets/img/portfolio/5.png"><img class="img-responsive" src="assets/img/portfolio/5.png" alt=""></a>
+	                            </div>
+	                            <div class="overlay"></div>
+	                        </div>
+	                    </div>
+	                </div>
+				</div><!-- col-lg-4 -->
+				
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
+					<div class="project-wrapper">
+	                    <div class="project">
+	                        <div class="photo-wrapper">
+	                            <div class="photo">
+	                            	<a class="fancybox" href="assets/img/portfolio/6.png"><img class="img-responsive" src="assets/img/portfolio/6.png" alt=""></a>
+	                            </div>
+	                            <div class="overlay"></div>
+	                        </div>
+	                    </div>
+	                </div>
+				</div><!-- col-lg-4 -->
+			</div><!-- /row -->
+		</div><! --/container -->
+		<div class="container">
+			<div class="row mt centered">
+				<h1>Het ontwikkelings proces.</h1>
+				<div class="col-lg-3 proc">
+					<i class="fa fa-coffee"></i>
+					<h3>Afspraak</h3>
+					<p>Door middel van een persoonlijke afspraak stel ik uw wensen vast en probeer ik een beeld te krijgen hoe uw perfecte website eruit moet komen te zien.</p>
+				</div>
+				<div class="col-lg-3 proc">
+					<i class="fa fa-cogs"></i>
+					<h3>Ontwerp</h3>
+					<p>Op basis van uw wensen maak ik een ontwerp voor uw website als een basis om vanuit te werken.</p>
+				</div>
+				<div class="col-lg-3 proc">
+					<i class="fa fa-wrench"></i>
+					<h3>Verbeteringen</h3>
+					<p>Na het gezamelijk aanpassen van het ontwerp, gaat er een website die voldoet aan uw wensen ontwikkeld worden.</p>
+				</div>
+                <div class="col-lg-3 proc">
+                	<i class="fa fa-heart"></i>
+                    <h3>Resultaat</h3>
+                    <p>Na een laatste bijeenkomts om voor de laatste keer te kijken of de website voldoet aan uw wensen is hij klaar om online gezet te worden.</p>
+                </div>
+				
+			</div><! --/row -->
+		</div><! --/container -->
+	</div><! --/Portfoliowrap -->
 
-  window.fbAsyncInit = function() {
-  FB.init({
-    appId      : '342681595892718', // Change to your app-ID (via Facebook Dashboard)
-    cookie     : true,  // enable cookies to allow the server to access 
-                        // the session
-    xfbml      : true,  // parse social plugins on this page
-    version    : 'v2.1' // use version 2.1
-  });
+	<! -- PORTFOLIO SEPARATOR -->
+	<div class="sep portfolio" data-stellar-background-ratio="0.5"></div>
+	
+	
+	<! -- SERVICE SECTION -->
+	<section id="services" name="services"></section>
+	<div id="servicewrap">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8-offset-2 centered">
+					<h1>NU! CMS</h1>
+					<h3>Alles wat je nodig hebt voor je website</h3>
+					<p>Beheer gemakkelijk je gehele website met het NU! CMS</p>
+				</div><!-- /col-lg-8 -->
+			</div><! --/row -->
+			
+			<div class="row mt">
+				<div class="col-lg-3 service">
+					<i class="fa fa-shield"></i><p>VEILIG<br/><small>Geschikt tegen kwaadwillende</small></p>
+					<p class="text">Bij de opbouw van het NU! CMS is altijd goed nagedacht om de beveiliging zo sterk mogelijk te houden en inbrekers te weren.</p>
+				</div>
+				<div class="col-lg-3 service">
+					<i class="fa fa-save"></i><p>Lokaal<br/><small>Uw gegevens zijn lokaal opgeslagen</small></p>
+					<p class="text">Alle gegevens voor het inloggen zullen alleen lokaal worden opgeslagen en zijn dus onafhankelijk van andere websites.</p>
+				</div>
+				<div class="col-lg-3 service">
+					<i class="fa fa-user"></i><p>Niveau's<br/><small>Toegang tot delen van de website</small></p>
+					<p class="text">Het is met NU! CMS mogelijk om verschillende gebruikersniveau's in te stellen voor toegang tot uw website.</p>
+				</div>
+				<div class="col-lg-3 service">
+					<i class="fa fa-heart-o"></i><p>Settings<br/><small>Zelf je website aanpassen</small></p>
+					<p class="text">Het is mogelijk om zelf de instellingen van je website aan te passen zoals website naam, email adres, template en nog veel meer!</p>
+				</div>
+			</div><! --/row -->
+            <br />
+            <div class="row">
+            	<div class="col-lg-8-offset-2 centered">
+                	<span class="alert alert-info"><a href="/cms" class="alert-link">Op deze pagina kunt u meer informatie vinden over het NU! CMS</a></span>
+                </div>
+            </div>
+			
+			
+		</div><! --/container -->
+	</div><! --/servicewrap -->
+	
+	<div id="testimonials">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2 mt">
+				
+					<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+					  <!-- Wrapper for slides -->
+					  <div class="carousel-inner">
+					    <div class="item active mb centered">
+					      <h3>HTML 5</h3>
+					      <p>HTML 5 is de nieuwste techniek voor het opmaken van websites. HTML 5 gebruik ik voor het opbouwen van uw website om zo tot een perfect resultaat te komen.</p>
+					      <p><img class="img-rounded" src="assets/img/pic-t1.png" width="80"></p>
+					    </div>
 
-  // Now that we've initialized the JavaScript SDK, we call 
-  // FB.getLoginStatus().  This function gets the state of the
-  // person visiting this page and can return one of three states to
-  // the callback you provide.  They can be:
-  //
-  // 1. Logged into your app ('connected')
-  // 2. Logged into Facebook, but not your app ('not_authorized')
-  // 3. Not logged into Facebook and can't tell if they are logged into
-  //    your app or not.
-  //
-  // These three cases are handled in the callback function.
+					    <div class="item mb centered">
+					      <h3>CSS 3</h3>
+					      <p>CSS 3 bevat tal van nieuwe mogelijkheden voor webdevelopers. CSS 3 zorgt er uiteindelijk voor dat uw website met de juiste toepassing van HTML 5 er gelikt uit ziet.</p>
+					      <p><img class="img-rounded" src="assets/img/pic-t2.jpg" width="80"></p>
+					    </div>
 
-  FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
-  });
+					    <div class="item mb centered">
+					      <h3>BOOTSTRAP 3</h3>
+					      <p>Bootstrap is een basis gebaseerd op CSS 3 voor uw website. Er zijn vele mogelijkheden beschikbaar en het zorgt ervoor dat uw website geschikt is voor mobiele apparaten.</p>
+					      <p><img class="img-rounded" src="assets/img/pic-t3.png" width="80"></p>
+					    </div>
 
-  };
-
-  // Load the SDK asynchronously
-  (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/nl_NL/sdk.js";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-
-  // Here we run a very simple test of the Graph API after login is
-  // successful.  See statusChangeCallback() for when this call is made.
-  function testAPI() {
-    console.log('Welcome!  Fetching your information.... ');
-    FB.api('/me?fields=id,name,first_name,last_name,email,age_range,gender', function(response) {
-      console.log('Successful login for: ' + response.name);
-	  {scope: 'email' }
-      var userData = [
-        response.first_name,
-        response.last_name,
-        response.email,
-        response.age_range,
-        response.gender
-      ];
-
-      var jsonString = JSON.stringify(userData);
-      // console.log(userData);
-      // Send to facebook-data.php
-      $.ajax({
-        data: {data: jsonString},
-        type: 'POST',
-        url: 'facebook-data.php',
-        success: function(data) {
-          console.log(data);
-        }
+					  </div>
+					  <!-- Indicators -->
+					  <ol class="carousel-indicators">
+					    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+					    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+					    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+					  </ol>
+					</div>
+					  
+				</div><! --/col-lg-8 -->
+			</div><! --/row -->
+		</div><! --/container -->
+	</div><! --/testimonials -->
+	
+	
+	
+	<div id="contactwrap">
+		<div class="container" id="contact">
+        	<div class="row">
+            	<div class="col-md-3">
+                	<a class="twitter-timeline" href="https://twitter.com/nu_jules_nl" data-widget-id="491921592360767488">Tweets van @nu_jules_nl</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+				</div>
+            
+				<div class="col-md-offset-3 col-lg-6">
+					<p>NEEM CONTACT MET MIJ OP</p>
+					<p>Je kunt contact met me opnemen door onderstaande gegevens of door het contact formulier in te vullen.</p>
+					<p>
+						<small>Carmelitessenstraat 32<br/>
+						6041CA Roermond<br/>
+						Nederland</small>
+					</p>
+					<p>
+						<small><i class="fa fa-phone">&nbsp;&nbsp;+31 (0)6 53 46 15 85</i><br/>
+						<i class="fa fa-envelope-o"><a href="mailto:jules@nujules.nl?subject=Bericht%20verstuurd%20vanuit%20website">&nbsp;&nbsp;jules@nujules.nl</a></i>
+					</p>
+			
+				</div>				
+			
+			</div><! -- row -->
+            <p class="pull-right"><a href="http://www.facebook.com/jules.kreutzer" target="_blank"><i class="fa fa-facebook"></i></a>
+						<a href="http://www.twitter.com/jules_kreutzer" target="_blank"><i class="fa fa-twitter"></i></a>
+						<a href="mailto:jules@nujules.nl?subject=Email%20verzonden%20vanuit%20website"><i class="fa fa-envelope"></i></a></p>
+		</div><!-- /container -->
+	</div>
+	
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="assets/js/classie.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/smoothscroll.js"></script>
+	<script src="assets/js/jquery.stellar.min.js"></script>
+	<script src="assets/js/fancybox/jquery.fancybox.js"></script>    
+	<script src="assets/js/main.js"></script>
+		<script>
+		$(function(){
+			$.stellar({
+				horizontalScrolling: false,
+				verticalOffset: 40
+			});
+		});
+		</script>
+		
+		<script type="text/javascript">
+      $(function() {
+        //    fancybox
+          jQuery(".fancybox").fancybox();
       });
+	   </script>
 
-      document.getElementById('status').innerHTML =
-        'Thanks for logging in, ' + response.name + '!';
-    });
-  }
-</script>
-       <div class="container">
-        <!-- we beginnen met de opmaak voor de menu bar -->
-        	<div class="navbar navbar-fixed-top" role="navigation">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="index.html">Home</a></li>
-            <li><a href="about.html">Over RoboShooter</a></li>
-            <li><a href="team.html">Over ons</a></li>
-            <li><a href="statistics/index.php">Dashboard</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-    </div>
-
-            <div class="row">
-            	<div class="col-lg-offset-3 col-lg-6">
-                	<div class="form-heading">
-                    	<h1 class="text-center"><img src="RoboshooterJules-2-@2x.png" alt="RoboShooter!" title="RoboShooter!" width="400" height="150" ></h1>
-                        	<hr>
-                    </div>
-            	</div>
-            </div>
-            <!-- ROW geef aan dat we de pagina in kolommen kunnen opdelen (col-lg-x) -->
-            <div class="row">
-            	<div class="col-lg-offset-2 col-lg-4">
-                	<div class="form-heading">
-                    	<h2><i class="fa fa-star"></i>&nbsp;<strong>High Score</strong></h2>
-                        <hr>
-                    </div>
-                    <!-- Tabel voor het weergeven van de Highscore -->
-                        	<div class="table-responsive">
-                            	<table class="table table-condensed table-hover">
-                                	<tr>
-                                    	<th>Voornaam</th>
-                                        <th>Achternaam</th>
-                                        <th>Score</th>
-                                        <th>Tijd</th>
-                                    </tr>
-                                    <tr>
-                                    	<td>Dominic</td>
-                                        <td>van Ettinger</td>
-                                        <td><strong>4</strong></td>
-                                        <td><strong>9</strong> min. <strong>12</strong> sec.</td>
-                                    </tr>
-                                    <tr>
-                                    	<td>Thijs</td>
-                                        <td>de Vries</td>
-                                        <td><strong>4</strong></td>
-                                        <td><strong>9</strong> min. <strong>12</strong> sec.</td>
-                                    </tr>
-                                    <tr>
-                                    	<td>Brent</td>
-                                        <td>Kaboord</td>
-                                        <td><strong>4</strong></td>
-                                        <td><strong>9</strong> min. <strong>12</strong> sec.</td>
-                                    </tr>
-                                    <tr>
-                                    	<td>Tom</td>
-                                        <td>de Wit</td>
-                                        <td><strong>4</strong></td>
-                                        <td><strong>9</strong> min. <strong>12</strong> sec.</td>
-                                    </tr>
-                                    <tr>
-                                    	<td>Jules</td>
-                                        <td>Kreutzer</td>
-                                        <td><strong>4</strong></td>
-                                        <td><strong>9</strong> min. <strong>12</strong> sec.</td>
-                                    </tr>
-                                </table>
-                            </div>
-                    
-                </div>
-                <div class="col-lg-4">
-                	<div class="form-heading">
-                    	<h2><i class="fa fa-plus"></i>&nbsp;<strong>New game</strong></h2>
-                        <hr>
-                    </div>
-                            <div class="form-body">
-                            <!-- Formulier waar de gebruiker zich kan aanmelden voor het spel -->
-                            	<p class="text-center">Om sneller te kunnen beginnen met spelen, kunt u gemakkelijk en veilig inloggen door middel van facebook.</p>
-                                
-                                <div class="col-lg-offset-3">
-                                        <div class="fb-login-button text-center" data-scope="email" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div>
-                                </div>
-                                    
-                                    <!-- Link naar de spelregels die opent in een nieuw tabblad -->
-                                    <p class="small"><a href="about.html" target="_blank">Bekijk de spelregels</a></p>
-                                
-                            </div>
-                </div>
-            </div>
-     	</div>
-</body>
+  </body>
 </html>
