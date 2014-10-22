@@ -10,8 +10,6 @@ mysql_connect('92.48.206.233', 'eu186781_a15', 'kreutzer') or die(mysql_error())
 
 $sql = "SELECT id FROM roboshooter WHERE email = '$email'";
 $result = mysql_query($sql);
-$content = mysql_fetch_assoc($result);
-echo $content;
 ?>
 <!doctype html>
 <html>
@@ -19,8 +17,8 @@ echo $content;
 <meta charset="UTF-8">
 <title>ROBOSHOOTER</title>
 <!-- Bootstrap core CSS -->
-  <link href="http://nujules.nl/assets/css/bootstrap.css" rel="stylesheet">
-  <link href="http://nujules.nl/assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../assets/css/bootstrap.css" rel="stylesheet">
+        <link href="../assets/css/font-awesome.min.css" rel="stylesheet">
 
 </head>
 <body>
@@ -130,7 +128,8 @@ function statusChangeCallback(response) {
                             <!-- Formulier waar de gebruiker zich kan aanmelden voor het spel -->
                             	<p class="text-center">Hoi <?php echo $_SESSION['first_name'] ?>,</p>
                                 <p class="text-center">Gebruik onderstaande code om het spel te starten.</p>
-                                <h3 class="text-center">code</h3>
+                                <h3 class="text-center">code: <?php while($content = mysql_fetch_assoc($result)
+){ echo $content['id']; } ?></h3>
                                 <br><br>
                                 <button class="btn btn-lg btn-default col-lg-offset-5" onClick="fbLogoutUser()"><i class="fa fa-facebook-square"></i>&nbsp;Uitloggen</button>
                             </div>
