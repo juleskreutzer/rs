@@ -21,7 +21,7 @@ function donutChartGender() {
 	while($rowFemale = $resultFemale->fetch_assoc()) {
 		$female = stripslashes($rowFemale['female']);
 	}
-	
+
 	$donut = "Morris.Donut({
         element: 'donutChartGender',
         data: [{
@@ -33,9 +33,9 @@ function donutChartGender() {
         }],
         resize: true
     });
-	
+
 	";
-	
+
 	return($donut);
 }
 
@@ -51,7 +51,7 @@ function donutChartAge() {
 	while($rowPlus = $resultPlus->fetch_assoc()) {
 		$plus = stripslashes($rowPlus['plus']);
 	}
-	
+
 	$donut = "Morris.Donut({
         element: 'donutChartAge',
         data: [{
@@ -63,16 +63,16 @@ function donutChartAge() {
         }],
         resize: true
     });
-	
+
 	";
-	
+
 	return($donut);
 }
 
 function donutChartPointTopMin() {
 	global $con;
-	$sqlTop = "SELECT COUNT(*) AS top FROM roboshooter WHERE scoreEind = 24";
-	$sqlFail = "SELECT COUNT(*) AS fail FROM roboshooter WHERE scoreEind = 0";
+	$sqlTop = "SELECT COUNT(*) AS top FROM game WHERE score = 24";
+	$sqlFail = "SELECT COUNT(*) AS fail FROM game WHERE score = 0";
 	$resultTop = $con->query($sqlTop);
 	$resultFail = $con->query($sqlFail);
 	while($rowTop = $resultTop->fetch_assoc()) {
@@ -81,7 +81,7 @@ function donutChartPointTopMin() {
 	while($rowFail = $resultFail->fetch_assoc()) {
 		$fail = stripslashes($rowFail['fail']);
 	}
-	
+
 	$donut = "Morris.Donut({
         element: 'donutChartTopMin',
         data: [{
@@ -93,9 +93,9 @@ function donutChartPointTopMin() {
         }],
         resize: true
     });
-	
+
 	";
-	
+
 	return($donut);
 }
 
@@ -105,7 +105,7 @@ function displayAllPoints() {
         element: 'displayAllPoints',
         data: [";
 	for($i = 0; $i <= 24; $i++) {
-		$sql = "SELECT COUNT(*) AS points FROM roboshooter WHERE scoreEind = '$i'";
+		$sql = "SELECT COUNT(*) AS points FROM game WHERE score = '$i'";
 		$result = $con->query($sql);
 		while($rowPoints = $result->fetch_assoc()) {
 			$point = stripslashes($rowPoints['points']);
@@ -123,16 +123,15 @@ function displayAllPoints() {
 		}
 	}
 	$line .= "
-		xkey: ['nummer'],
+				xkey: ['nummer'],
         ykeys: ['points'],
         xlabels: ['nummer'],
         smooth: false,
         resize: true
     });
 	";
-	
+
 	return($line);
 }
 
 ?>
-	

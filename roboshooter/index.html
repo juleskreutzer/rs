@@ -13,9 +13,18 @@
 <div id="fb-root"></div>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
 <script>
-setTimeout(function() {
-	window.location = "index.html";
-}, 6000);
+  $(document).ready(function(){
+   var url = 'feed.php';
+      $.getJSON(url, function(data) {
+          $.each(data, function(index, data) {
+           $('#score').append('<tr>');
+       $('#score').append('<td>'+data.voornaam+'</td>');
+       $('#score').append('<td>'+data.achternaam+'</td>');
+       $('#score').append('<td><b>'+data.score+'</b></td>');
+       $('#score').append('</tr>');
+    });
+  });
+});
 </script>
 <script>
   // This is called with the results from from FB.getLoginStatus().
@@ -57,13 +66,13 @@ setTimeout(function() {
   window.fbAsyncInit = function() {
   FB.init({
     appId      : '342681595892718', // Change to your app-ID (via Facebook Dashboard)
-    cookie     : true,  // enable cookies to allow the server to access 
+    cookie     : true,  // enable cookies to allow the server to access
                         // the session
     xfbml      : true,  // parse social plugins on this page
     version    : 'v2.1' // use version 2.1
   });
 
-  // Now that we've initialized the JavaScript SDK, we call 
+  // Now that we've initialized the JavaScript SDK, we call
   // FB.getLoginStatus().  This function gets the state of the
   // person visiting this page and can return one of three states to
   // the callback you provide.  They can be:
@@ -160,46 +169,10 @@ setTimeout(function() {
                     </div>
                     <!-- Tabel voor het weergeven van de Highscore -->
                         	<div class="table-responsive">
-                            	<table class="table table-condensed table-hover">
-                                	<tr>
-                                    	<th>Voornaam</th>
-                                        <th>Achternaam</th>
-                                        <th>Score</th>
-                                        <th>Tijd</th>
-                                    </tr>
-                                    <tr>
-                                    	<td>Dominic</td>
-                                        <td>van Ettinger</td>
-                                        <td><strong>4</strong></td>
-                                        <td><strong>9</strong> min. <strong>12</strong> sec.</td>
-                                    </tr>
-                                    <tr>
-                                    	<td>Thijs</td>
-                                        <td>de Vries</td>
-                                        <td><strong>4</strong></td>
-                                        <td><strong>9</strong> min. <strong>12</strong> sec.</td>
-                                    </tr>
-                                    <tr>
-                                    	<td>Brent</td>
-                                        <td>Kaboord</td>
-                                        <td><strong>4</strong></td>
-                                        <td><strong>9</strong> min. <strong>12</strong> sec.</td>
-                                    </tr>
-                                    <tr>
-                                    	<td>Tom</td>
-                                        <td>de Wit</td>
-                                        <td><strong>4</strong></td>
-                                        <td><strong>9</strong> min. <strong>12</strong> sec.</td>
-                                    </tr>
-                                    <tr>
-                                    	<td>Jules</td>
-                                        <td>Kreutzer</td>
-                                        <td><strong>4</strong></td>
-                                        <td><strong>9</strong> min. <strong>12</strong> sec.</td>
-                                    </tr>
+                            	<table class="table table-condensed table-hover" id="score">
                                 </table>
                             </div>
-                    
+
                 </div>
                 <div class="col-lg-4">
                 	<div class="form-heading">
@@ -209,14 +182,14 @@ setTimeout(function() {
                             <div class="form-body">
                             <!-- Formulier waar de gebruiker zich kan aanmelden voor het spel -->
                             	<p class="text-center">Om sneller te kunnen beginnen met spelen, kunt u gemakkelijk en veilig inloggen door middel van facebook.</p>
-                                
+
                                 <div class="col-lg-offset-3">
                                         <div class="fb-login-button text-center" data-scope="email" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div>
                                 </div>
-                                    
+
                                     <!-- Link naar de spelregels die opent in een nieuw tabblad -->
                                     <p class="small"><a href="about.html" target="_blank">Bekijk de spelregels</a></p>
-                                
+
                             </div>
                 </div>
             </div>

@@ -5,7 +5,7 @@
 
 	//Verbinding met database opzetten
 	$con = mysqli_connect("92.48.206.233", "eu186781_a15", "kreutzer", "eu186781_rs") or die(mysqli_error);
-	$sql = "UPDATE roboshooter SET scoreEind = '$score' WHERE id = '$uid'";
+	$sql = "INSERT INTO game (userID, score) VALUES ('$uid', '$score')";
 
 	$con->query($sql);
 
