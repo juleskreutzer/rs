@@ -14,21 +14,22 @@ $sql = "SELECT
           game, roboshooter
         WHERE
           game.userID = roboshooter.id
-        ORDER BY game.score DESC LIMIT 10
+        ORDER BY game.score DESC LIMIT 5
+
       ";
 
 $result = mysqli_query($con,$sql);
 
+$return = array();
+
 while($row = mysqli_fetch_array($result))
 {
-    $return = array(
+    $return[] = array(
       'voornaam' => $row['voornaam'],
       'achternaam' => $row['achternaam'],
       'score' => $row['score']
     );
-    // 'voornaam' = $row['voornaam'];
-echo    json_encode($return);
 }
 
-
+echo json_encode($return);
 ?>
