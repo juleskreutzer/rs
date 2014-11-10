@@ -1,5 +1,5 @@
 Source code voor de website van RoboShooter.
 
-Ik ga hier geen readme voor typen, we weten hoe het werkt en iemand anders hoeft deze code niet te hebben.
+Gebruikt voor proftaak P1 Fontys Hogeschool ICT Eindhoven, 2014
 
-Doei.
+Login via facebook en krijg unieke code, speel het spel (extern) en punten worden doorgestuurd naar database. Weergeven van high score op index.html
