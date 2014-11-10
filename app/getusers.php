@@ -1,6 +1,6 @@
 <?php
 
-$link = mysql_pconnect("localhost, eu186781_jules, jk291194") ;
+$link = mysql_pconnect("localhost, eu186781_jules, ***") ;
 
 mysql_select_db("eu186781_app") or die("Kan de database niet vinden...");
 
