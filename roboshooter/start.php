@@ -5,8 +5,8 @@ ini_set('display_errors', '1');
 session_start();
 
 $email = $_SESSION['email'];
-mysql_connect('92.48.206.233', 'eu186781_a15', 'kreutzer') or die(mysql_error());
-    mysql_select_db('eu186781_rs');
+mysql_connect('***', '***', '***') or die(mysql_error());
+    mysql_select_db('***');
 
 $sql = "SELECT id FROM roboshooter WHERE email = '$email'";
 $result = mysql_query($sql);
