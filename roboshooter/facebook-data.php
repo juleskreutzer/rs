@@ -2,7 +2,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
-$con = mysqli_connect("92.48.206.233", "eu186781_a15", "kreutzer", "eu186781_rs") or die(mysqli_error);
+$con = mysqli_connect("***", "***", "***", "***") or die(mysqli_error);
  
   if(isset($_POST['data'])) {
     // decode data
