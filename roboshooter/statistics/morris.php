@@ -1,10 +1,10 @@
 <?php
 header('Content-Type: application/x-javascript');
 
-$db['host'] = "92.48.206.233";
-$db['user'] = "eu186781_a15";
-$db['pass'] = "kreutzer";
-$db['name'] = "eu186781_rs";
+$db['host'] = "***";
+$db['user'] = "***";
+$db['pass'] = "***";
+$db['name'] = "***";
 
 //Verbinding maken
 $con = mysqli_connect($db['host'], $db['user'], $db['pass'], $db['name']);
